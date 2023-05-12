@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programs Recognition Portal</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;800&display=swap');
+    body, html {
+        font-family: 'Public Sans', sans-serif;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        margin: 0;
+        display: flex;
+        padding: 0;
+        /* place-items: center;
+        min-width: 320px; */
+        min-height: 100vh;
+
+        scroll-behavior: smooth;
+        -webkit-scroll-behavior: smooth;
+    }
+
+    :root {
+        /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        line-height: 1.5; 
+        font-weight: 400; */
+        max-width: 1280px;
+        margin: 0;
+        padding: 0;
+        color-scheme: light dark;
+        color: rgba(255, 255, 255, 0.87);
+        background: url("https://adf-wa-programsrecognitionwebapp-test.azurewebsites.net/assets/dirt-texture.png") #f8f7f6;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; */
+        -webkit-text-size-adjust: 100%;
+    }
+
+    a {
+        font-weight: 500;
+        color: #646cff;
+        text-decoration: inherit;
+    }
+    
+    a:hover {
+        color: #535bf2;
+    }
+
+    h1 {
+        font-size: 3.2em;
+        line-height: 1.1;
+    }
+
+    .root-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .box-top {
+        display: flex;
+        flex: 1 1 0%;
+        -webkit-box-flex: 1;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+        gap: 10px;
+        max-height: 50px;
+        min-height: 50px;
+        background: rgb(255, 252, 244);
+        height: 50px;
+    }
+
+    .box-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box-header-container {
+        display: flex;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        gap: 15px;
+        background: whitesmoke;
+        height: 100px;
+        color: rgb(98, 91, 81);
+    }
+
+    .header-text {
+        margin: 0px;
+        font-family: "Public Sans", sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 32px;
+    }
+    
+    .box-middle {
+        display: flex;
+        flex: 1 1 0%;
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+    
+    .box-middle-container {
+        color: rgb(8, 108, 68);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        gap: 20px;
+        min-width: 300px;
+        max-width: 1000px;
+        padding: 16px;
+        margin-bottom: 24px;
+        border-radius: 12px;
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(212, 212, 212);
+    }
+    
+    #api {
+        /* background-color: rgb(255, 0, 0);*/
+        width:75%;
+        height:75%;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="root-container">
+            <div class="box-top">
+                <div style="width: 40px; order: 1;"></div>
+                <div style="width: 300px; text-align: left; order: 2;">
+                    <img height="30px" src="https://adf-wa-programsrecognitionwebapp-test.azurewebsites.net/assets/arbor-day-foundation-wide-eb8b4631.svg" alt="logo">
+                </div>
+            </div>
+            <div class="box-header">
+                <div class="box-header-container">
+                    <span class="header-text">Programs Recognition Portal</span>
+                </div>
+            </div>
+            <div class="box-middle">
+                <div class="box-middle-container">
+                    <div id="api"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
