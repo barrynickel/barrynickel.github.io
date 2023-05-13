@@ -1010,14 +1010,18 @@
             function setupPwdTogglers(){
               console.log("setting up togglers");
               var pwdInputs = document.querySelectorAll('input[type=password]');
+              console.log(pwdInputs);
               for (var i = 0; i < pwdInputs.length; i++) {
                 makePwdToggler(pwdInputs[i]);
               }
             }
             
             $(document).ready(function(){
-                console.log('testing on load');
-                setupPwdTogglers();
+                console.log('ready on load');
+                window.setTimeout(function() {
+                    console.log('waited 5 seconds...');
+                    setupPwdTogglers();
+                }, 5000)
             })
     </script>
 </head>
