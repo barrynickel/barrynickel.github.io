@@ -787,6 +787,27 @@
                 margin-top:0
             }
         }
+        
+    .unified_container #passwordtoggler-container {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 16px;
+        bottom: 44px;
+        padding: 0;
+    }
+    
+    .unified_container #passwordtoggler {
+        height: 16px;
+        line-height: 16px;
+        padding: 0;
+        display: block;
+        margin: 0;
+    }
+    
+    .unified_container #passwordtoggler:checked {
+        background-color: #60ACA8;
+    }
 
     </style>
 </head>
@@ -830,13 +851,9 @@
           var id = pwd.id + 'toggler';
           checkbox.setAttribute('id', id);
 
-          var label = document.createElement('label');
-          label.setAttribute('for', id);
-          label.appendChild(document.createTextNode('show password'));
-
           var div = document.createElement('div');
           div.appendChild(checkbox);
-          div.appendChild(label);
+          div.setAttribute('id', id + '-container');
 
           // Add show-password checkbox under password input
           pwd.insertAdjacentElement('afterend', div);
