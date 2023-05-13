@@ -1047,10 +1047,10 @@
           }
         }
     
-        window.onload = (event) => {
-          console.log("page is fully loaded");
-          setupPwdTogglers();
-        };
+        $( document ).ready(function() {
+            console.log("page is fully loaded");
+            setupPwdTogglers();
+        });
     
     </script>
 </head>
