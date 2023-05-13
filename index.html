@@ -802,43 +802,8 @@
         margin: 0 !important;
         accent-color: #7794c0;
     }
-
-
     </style>
-</head>
-<body>
-    <div id="root">
-        <div class="root-container">
-            <div class="box-top">
-                <div style="width: 40px; order: 1;"></div>
-                <div style="width: 300px; text-align: left; order: 2;">
-                    <img height="30px" src="https://adf-wa-programsrecognitionwebapp-test.azurewebsites.net/assets/arbor-day-foundation-wide-eb8b4631.svg" alt="logo">
-                </div>
-                <div style="color: rgb(98, 91, 81); position: absolute; left: 50%; transform: translateX(-50%);">PROGRAMS RECOGNITION</div>
-            </div>
-            <div class="box-header">
-                <div class="box-header-container">
-                    <span class="header-text">Programs Recognition Portal</span>
-                </div>
-            </div>
-            <div class="box-middle">
-                <div class="box-middle-container">
-                    <div class="container unified_container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <div id="api"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
+    <script type="text/javascript">
         function makePwdToggler(pwd){
           // Create show-password checkbox
           var checkbox = document.createElement('input');
@@ -872,9 +837,45 @@
             makePwdToggler(pwdInputs[i]);
           }
         }
-
-        setupPwdTogglers();
+    
+        window.onload = (event) => {
+          console.log("page is fully loaded");
+          setupPwdTogglers();
+        };
     
     </script>
+</head>
+<body>
+    <div id="root">
+        <div class="root-container">
+            <div class="box-top">
+                <div style="width: 40px; order: 1;"></div>
+                <div style="width: 300px; text-align: left; order: 2;">
+                    <img height="30px" src="https://adf-wa-programsrecognitionwebapp-test.azurewebsites.net/assets/arbor-day-foundation-wide-eb8b4631.svg" alt="logo">
+                </div>
+                <div style="color: rgb(98, 91, 81); position: absolute; left: 50%; transform: translateX(-50%);">PROGRAMS RECOGNITION</div>
+            </div>
+            <div class="box-header">
+                <div class="box-header-container">
+                    <span class="header-text">Programs Recognition Portal</span>
+                </div>
+            </div>
+            <div class="box-middle">
+                <div class="box-middle-container">
+                    <div class="container unified_container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div id="api"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
