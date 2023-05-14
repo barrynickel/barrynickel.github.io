@@ -846,18 +846,14 @@
             }
 
             function setupPwdTogglers(){
-              console.log("setting up togglers");
               var pwdInputs = document.querySelectorAll('input[type=password]');
-              console.log(pwdInputs);
               for (var i = 0; i < pwdInputs.length; i++) {
                 makePwdToggler(pwdInputs[i]);
               }
             }
             
             $(document).ready(function(){
-                console.log('loading');
                 window.setTimeout(function() {
-                    console.log('waited 1 second...');
                     setupPwdTogglers();
                 }, 1000)
             })
