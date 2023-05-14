@@ -109,7 +109,7 @@
     .box-middle-container {
         color: rgb(8, 108, 68);
         display: flex;
-        justify-content: center;
+        /*justify-content: center;*/
         flex-direction: column;
         -webkit-box-flex: 1;
         flex-grow: 1;
@@ -123,7 +123,8 @@
         align-items: center;
         background-color: rgb(255, 255, 255);
         border-color: rgb(212, 212, 212);
-        height:fit-content;
+        min-height: calc(100% - 40px);
+        height: max-content;
     }
     
     .box-footer {
