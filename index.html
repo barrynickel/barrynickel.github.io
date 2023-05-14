@@ -103,19 +103,19 @@
         -webkit-box-pack: center;
         justify-content: center;
         overflow-x: hidden;
-        background: url("https://barrynickel.github.io/dirt-texture.png") #f8f7f6;
+        background: url("https://barrynickel.github.io/images/dirt-texture.png") #f8f7f6;
     }
     
     .box-middle-container {
         color: rgb(8, 108, 68);
         display: flex;
-        justify-content: center;
+        /*justify-content: center;*/
         flex-direction: column;
         -webkit-box-flex: 1;
         flex-grow: 1;
         gap: 20px;
         min-width: 300px;
-        max-width: 1000px;
+        max-width: 800px;
         padding: 16px;
         margin-bottom: 24px;
         border-radius: 12px;
@@ -123,6 +123,20 @@
         align-items: center;
         background-color: rgb(255, 255, 255);
         border-color: rgb(212, 212, 212);
+        height:fit-content;
+    }
+    
+    .box-footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        height: 100px;
+        width: 100vw;
+        background-color: #F8F4EC;
+    }
+    .box-footer img {
+        height: 60px;
     }
     
     #api {
@@ -238,7 +252,7 @@
         }
         a:focus{
             outline:0;
-            border:none;
+            border:2px solid #000
         }
         input,select{
             border:1px solid #605e5c
@@ -267,7 +281,6 @@
             text-align:center;
             width:100%;
             display:table;
-            height:100vh;
             padding:0
         }
         .col-lg-6{
@@ -440,7 +453,7 @@
     </style>
     <style>
         .unified_container .row .panel-default{
-            padding:40px 30px;
+            padding:20px 30px;
             margin-top:auto;
             margin-bottom:auto;
             height:100%;
@@ -803,7 +816,51 @@
         accent-color: #7794c0;
     }
     </style>
-    
+    <script type="text/javascript">
+        function makePwdToggler(pwd){
+              // Create show-password checkbox
+              var checkbox = document.createElement('input');
+              checkbox.setAttribute('type', 'checkbox');
+              var id = pwd.id + 'toggler';
+              checkbox.setAttribute('id', id);
+
+              var div = document.createElement('div');
+              div.appendChild(checkbox);
+              div.setAttribute('id', id + '-container');
+
+              // Add show-password checkbox under password input
+              pwd.insertAdjacentElement('afterend', div);
+
+              // Add toggle password callback
+              function toggle(){
+                if(pwd.type === 'password'){
+                  pwd.type = 'text';
+                } else {
+                  pwd.type = 'password';
+                }
+              }
+              checkbox.onclick = toggle;
+              // For non-mouse usage
+              checkbox.onkeydown = toggle;
+            }
+
+            function setupPwdTogglers(){
+              console.log("setting up togglers");
+              var pwdInputs = document.querySelectorAll('input[type=password]');
+              console.log(pwdInputs);
+              for (var i = 0; i < pwdInputs.length; i++) {
+                makePwdToggler(pwdInputs[i]);
+              }
+            }
+            
+            $(document).ready(function(){
+                console.log('loading');
+                window.setTimeout(function() {
+                    console.log('waited 1 second...');
+                    setupPwdTogglers();
+                }, 1000)
+            })
+    </script>
 </head>
 <body>
     <div id="root">
@@ -835,45 +892,33 @@
                     </div>
                 </div>
             </div>
+            <div class="box-footer">
+                <img 
+                    src="https://barrynickel.github.io/images/logo-tree-city-usa.png"
+                    alt="tree city usa" 
+                />
+                <img
+                    src="https://barrynickel.github.io/images/logo-tree-campus-healthcare.png"
+                    alt="tree campus healthcare"
+                />
+                <img
+                    src="https://barrynickel.github.io/images/logo-tree-campus-higher-education.png"
+                    alt="tree campus higher education"
+                />
+                <img
+                    src="https://barrynickel.github.io/images/logo-tree-campus-k-12.png"
+                    alt="tree campus healthcare"
+                />
+                <img
+                    src="https://barrynickel.github.io/images/logo-tree-city-of-the-world.png"
+                    alt="tree cities of the world"
+                />
+                <img 
+                    src="https://barrynickel.github.io/images/logo-tree-line.png"
+                    alt="tree line" 
+                />
+            </div>
         </div>
-        <script type="text/javascript">
-            function makePwdToggler(pwd){
-              // Create show-password checkbox
-              var checkbox = document.createElement('input');
-              checkbox.setAttribute('type', 'checkbox');
-              var id = pwd.id + 'toggler';
-              checkbox.setAttribute('id', id);
-
-              var div = document.createElement('div');
-              div.appendChild(checkbox);
-              div.setAttribute('id', id + '-container');
-
-              // Add show-password checkbox under password input
-              pwd.insertAdjacentElement('afterend', div);
-
-              // Add toggle password callback
-              function toggle(){
-                if(pwd.type === 'password'){
-                  pwd.type = 'text';
-                } else {
-                  pwd.type = 'password';
-                }
-              }
-              checkbox.onclick = toggle;
-              // For non-mouse usage
-              checkbox.onkeydown = toggle;
-            }
-
-            function setupPwdTogglers(){
-              var pwdInputs = document.querySelectorAll('input[type=password]');
-              for (var i = 0; i < pwdInputs.length; i++) {
-                makePwdToggler(pwdInputs[i]);
-              }
-            }
-        
-            console.log("page is loaded");
-            setupPwdTogglers();
-        </script>
     </div>
 </body>
 </html>
