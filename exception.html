@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Programs Recognition Portal</title>
-    <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css">
     <style>
      @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;800&display=swap');
     body, html {
@@ -1038,49 +1039,45 @@
         .api_container div{
             padding-bottom:0
         }
-
         
+        .self_asserted_container .password-toggler {
+            font-size: 18px;
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            right: 18px;
+            bottom: 20px;
+            padding: 0;
+            color:#999;
+        }
     </style>
     <script type="text/javascript">
         function makePwdToggler(pwd){
-              // Create show-password checkbox
-              var checkbox = document.createElement('input');
-              checkbox.setAttribute('type', 'checkbox');
-              var id = pwd.id + 'toggler';
-              checkbox.setAttribute('id', id);
+          var i = document.createElement('i');
+          i.setAttribute('id', pwd.id + '-toggler');
+          i.classList.add('password-toggler', 'bi', 'bi-eye-slash')
+          pwd.insertAdjacentElement('afterend', i);
+          
+          function toggle(){
+            pwd.type = (pwd.type === 'password') ? 'text' : 'password';
+            i.classList.toggle('bi-eye')
+          }
+          i.onclick = toggle;
+          i.onkeydown = toggle;
+        }
 
-              var div = document.createElement('div');
-              div.appendChild(checkbox);
-              div.setAttribute('id', id + '-container');
-
-              // Add show-password checkbox under password input
-              pwd.insertAdjacentElement('afterend', div);
-
-              // Add toggle password callback
-              function toggle(){
-                if(pwd.type === 'password'){
-                  pwd.type = 'text';
-                } else {
-                  pwd.type = 'password';
-                }
-              }
-              checkbox.onclick = toggle;
-              // For non-mouse usage
-              checkbox.onkeydown = toggle;
-            }
-
-            function setupPwdTogglers(){
-              var pwdInputs = document.querySelectorAll('input[type=password]');
-              for (var i = 0; i < pwdInputs.length; i++) {
-                makePwdToggler(pwdInputs[i]);
-              }
-            }
-            
-            $(document).ready(function(){
-                window.setTimeout(function() {
-                    setupPwdTogglers();
-                }, 2000)
-            })
+        function setupPwdTogglers(){
+          var pwdInputs = document.querySelectorAll('input[type=password]');
+          pwdInputs.forEach(function(pwdInput) {
+            makePwdToggler(pwdInput);
+          })
+        }
+        
+        $(document).ready(function(){
+            window.setTimeout(function() {
+                setupPwdTogglers();
+            }, 2000)
+        })
     </script>
 </head>
 <body>
