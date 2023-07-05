@@ -988,6 +988,10 @@
             padding: 0;
             color:#999;
         }
+        
+        .self_asserted_container #attributeList li.Password, #attributeVerification .buttons #continue {
+            display:none;
+        }
     </style>
     <script type="text/javascript">
         function makePwdToggler(pwd){
@@ -1011,9 +1015,30 @@
           })
         }
         
+        function onVisible(element, ratio, callback) {
+          new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if(entry.intersectionRatio == ratio) {
+                callback(element);
+                observer.disconnect();
+              }
+            });
+          }).observe(element);
+        }
+        
         $(document).ready(function(){
             window.setTimeout(function() {
                 setupPwdTogglers();
+                
+                onVisible(document.querySelector("#emailVerificationControl_but_change_claims"), 1, () => {
+                    let verifyTextNode = document.querySelector("#emailVerificationControl_success_message");
+                    let verifyText = verifyTextNode.innerHTML
+                    if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) {
+                        document.querySelectorAll('li.Password').forEach(function(node) { node.style.display = 'block' })
+                        document.querySelector('#continue').style.display = 'block';
+                    }
+                });
+                
             }, 2000)
         })
     </script>
