@@ -1019,8 +1019,9 @@
           new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
               if(entry.intersectionRatio == ratio) {
+                console.log('element visible')
                 callback(element);
-                //observer.disconnect();
+                observer.disconnect();
               }
             });
           }).observe(element);
@@ -1045,6 +1046,7 @@
                     });
                 }
                 
+                console.log('checking if element does not exist')
                 if (!document.querySelector(".VerificationControl.emailVerificationControl_li")) {
                     setVisible()
                 }
