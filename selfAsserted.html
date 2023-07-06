@@ -1060,11 +1060,14 @@
                     document.querySelector('li.Password.newPassword_li').style.marginTop = '3rem';
                 } else {
                     console.log('element exists, adjusting margin');
-                    document.querySelector('li.Password.newPassword_li').style.marginTop = '1rem';
+                    if (document.querySelector('li.Password.newPassword_li')) {
+                        document.querySelector('li.Password.newPassword_li').style.marginTop = '1rem';
+                    }
                     
                     let verifyText = verifyTextNode.innerHTML;
                     if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue') && buttonContinue.textContent == 'Continue') {
                         document.getElementById("emailVerificationControl_but_change_claims").style.display = 'none';
+                        document.getElementById('continue').style.display = 'inline';
                     }
                     
                 }
