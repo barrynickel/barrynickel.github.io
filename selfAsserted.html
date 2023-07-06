@@ -1020,7 +1020,7 @@
             entries.forEach(entry => {
               if (entry.intersectionRatio > 0) {
                 callback(element);
-                observer.disconnect();
+                //observer.disconnect();
               }
             });
           }).observe(element);
@@ -1041,13 +1041,18 @@
                 if (document.getElementById("emailVerificationControl_but_change_claims")) {
                     onVisible(document.getElementById("emailVerificationControl_but_change_claims"), 1, () => {
                         let verifyText = verifyTextNode.innerHTML;
-                        if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue') &&buttonContinue.textContent == 'Create') {
+                        if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue') &&) {
                             setVisible();
                             
                             document.getElementById("emailVerificationControl_but_change_claims").style.display = 'none';
-                            document.querySelector('li.EmailBox.email_li.email').style.margin = '1rem 0 0 0';
-                            document.querySelector("#emailVerificationControl .buttons").style.paddingBottom = '0';
-                            document.querySelector(".VerificationControl.emailVerificationControl_li").style.marginBottom = '0.5rem';
+                            
+                            if (buttonContinue.textContent == 'Create') {
+                                document.querySelector('li.EmailBox.email_li.email').style.margin = '1rem 0 0 0';
+                                document.querySelector("#emailVerificationControl .buttons").style.paddingBottom = '0';
+                                document.querySelector(".VerificationControl.emailVerificationControl_li").style.marginBottom = '0.5rem';
+                            else if (buttonContinue.textContent == 'Continue') {
+                                console.log('do more stuff');
+                            }
                             
                         }
                     });
@@ -1057,22 +1062,14 @@
                 if (!document.querySelector(".VerificationControl.emailVerificationControl_li")) {
                     console.log('element does not exist, showing password inputs and adjusting margin');
                     setVisible();
-                    document.querySelector('li.Password.newPassword_li').style.marginTop = '3rem';
+                    if (document.querySelector('li.Password.newPassword_li')) {
+                        document.querySelector('li.Password.newPassword_li').style.marginTop = '3rem';
+                    }
                 } else {
                     console.log('element exists, adjusting margin');
                     if (document.querySelector('li.Password.newPassword_li')) {
                         document.querySelector('li.Password.newPassword_li').style.marginTop = '1rem';
                     }
-                    
-                    let verifyText = verifyTextNode.innerHTML;
-                    if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue') && buttonContinue.textContent == 'Continue') {
-                        console.log('on email verification page');
-                        console.log(document.getElementById('continue'));
-                        console.log(document.getElementById("emailVerificationControl_but_change_claims"))
-                        document.getElementById('continue').style.display = 'block';
-                        document.getElementById("emailVerificationControl_but_change_claims").style.display = 'none';
-                    }
-                    
                 }
                 
             }, 2000)
