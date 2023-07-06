@@ -1035,13 +1035,15 @@
             window.setTimeout(function() {
                 setupPwdTogglers();
                 
-                onVisible(document.querySelector("#emailVerificationControl_but_change_claims"), 1, () => {
-                    let verifyTextNode = document.querySelector("#emailVerificationControl_success_message");
-                    let verifyText = verifyTextNode.innerHTML
-                    if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) {
-                        setVisible()
-                    }
-                });
+                if (document.querySelector("#emailVerificationControl_but_change_claims")) {
+                    onVisible(document.querySelector("#emailVerificationControl_but_change_claims"), 1, () => {
+                        let verifyTextNode = document.querySelector("#emailVerificationControl_success_message");
+                        let verifyText = verifyTextNode.innerHTML
+                        if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) {
+                            setVisible()
+                        }
+                    });
+                }
                 
                 if (!document.querySelector(".VerificationControl.emailVerificationControl_li")) {
                     setVisible()
