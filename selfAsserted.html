@@ -1020,7 +1020,7 @@
             entries.forEach(entry => {
               if(entry.intersectionRatio == ratio) {
                 callback(element);
-                observer.disconnect();
+                //observer.disconnect();
               }
             });
           }).observe(element);
@@ -1033,11 +1033,12 @@
                 onVisible(document.querySelector("#emailVerificationControl_but_change_claims"), 1, () => {
                     let verifyTextNode = document.querySelector("#emailVerificationControl_success_message");
                     let verifyText = verifyTextNode.innerHTML
-                    if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) {
+                    if ((verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) || !document.querySelector(".VerificationControl.emailVerificationControl_li")) {
                         document.querySelectorAll('li.Password').forEach(function(node) { node.style.display = 'block' })
                         document.querySelector('#continue').style.display = 'block';
                     }
                 });
+                
                 
             }, 2000)
         })
