@@ -1036,7 +1036,6 @@
                 setupPwdTogglers();
                 
                 let buttonContinue = document.getElementById('continue')
-                let buttonChangeClaims = document.getElementById("emailVerificationControl_but_change_claims");
                 let verifyTextNode = document.getElementById("emailVerificationControl_success_message");
                 
                 if (document.getElementById("emailVerificationControl_but_change_claims")) {
@@ -1044,8 +1043,12 @@
                         let verifyText = verifyTextNode.innerHTML;
                         if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue') &&buttonContinue.textContent == 'Create') {
                             setVisible();
-                            buttonChangeClaims.style.display = 'none';
+                            
+                            document.getElementById("emailVerificationControl_but_change_claims").style.display = 'none';
                             document.querySelector('li.EmailBox.email_li.email').style.margin = '1rem 0 0 0';
+                            document.querySelector("#emailVerificationControl .buttons").style.paddingBottom = '0';
+                            document.querySelector(".VerificationControl.emailVerificationControl_li").style.marginBottom = '0.5rem';
+                            
                         }
                     });
                 }
@@ -1061,7 +1064,7 @@
                     
                     let verifyText = verifyTextNode.innerHTML;
                     if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue') && buttonContinue.textContent == 'Continue') {
-                        buttonChangeClaims.style.display = 'none';
+                        document.getElementById("emailVerificationControl_but_change_claims").style.display = 'none';
                     }
                     
                 }
