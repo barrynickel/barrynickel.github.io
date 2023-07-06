@@ -1041,7 +1041,7 @@
                 if (document.getElementById("emailVerificationControl_but_change_claims")) {
                     onVisible(document.getElementById("emailVerificationControl_but_change_claims"), 1, () => {
                         let verifyText = verifyTextNode.innerHTML;
-                        if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue') &&) {
+                        if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) {
                             setVisible();
                             
                             document.getElementById("emailVerificationControl_but_change_claims").style.display = 'none';
