@@ -1045,13 +1045,11 @@
                             setVisible();
                             
                             document.getElementById("emailVerificationControl_but_change_claims").style.display = 'none';
+                            document.querySelector("#emailVerificationControl .buttons").style.paddingBottom = '0';
+                            document.querySelector(".VerificationControl.emailVerificationControl_li").style.marginBottom = '0.5rem';
                             
                             if (buttonContinue.textContent == 'Create') {
                                 document.querySelector('li.EmailBox.email_li.email').style.margin = '1rem 0 0 0';
-                                document.querySelector("#emailVerificationControl .buttons").style.paddingBottom = '0';
-                                document.querySelector(".VerificationControl.emailVerificationControl_li").style.marginBottom = '0.5rem';
-                            } else if (buttonContinue.textContent == 'Continue') {
-                                console.log('maybe do more stuff');
                             }
                             
                         }
