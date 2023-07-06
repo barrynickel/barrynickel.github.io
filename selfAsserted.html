@@ -1019,7 +1019,6 @@
           new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
               if(entry.intersectionRatio == ratio) {
-                console.log('element visible')
                 callback(element);
                 observer.disconnect();
               }
@@ -1028,7 +1027,7 @@
         }
         
         function setVisible(){
-            document.querySelectorAll('li.Password').forEach(function(node) { node.style.display = 'block' })
+            document.querySelectorAll('li.Password').forEach(function(node) { node.style.display = 'block' });
             document.querySelector('#continue').style.display = 'block';
         }
         
@@ -1041,14 +1040,19 @@
                         let verifyTextNode = document.querySelector("#emailVerificationControl_success_message");
                         let verifyText = verifyTextNode.innerHTML
                         if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) {
-                            setVisible()
+                            setVisible();
                         }
                     });
                 }
                 
-                console.log('checking if element does not exist')
+                console.log('checking if element does not exist');
                 if (!document.querySelector(".VerificationControl.emailVerificationControl_li")) {
-                    setVisible()
+                    console.log('element does not exist, showing password inputs and adjusting margin');
+                    setVisible();
+                    document.querySelector('li.Password.newPassword_li').style.marginTop = '3rem';
+                } else {
+                    console.log('element exists, adjusting margin');
+                    document.querySelector('li.Password.newPassword_li').style.marginTop = '1rem';
                 }
                 
             }, 2000)
