@@ -1026,6 +1026,11 @@
           }).observe(element);
         }
         
+        function setVisible(){
+            document.querySelectorAll('li.Password').forEach(function(node) { node.style.display = 'block' })
+            document.querySelector('#continue').style.display = 'block';
+        }
+        
         $(document).ready(function(){
             window.setTimeout(function() {
                 setupPwdTogglers();
@@ -1033,12 +1038,14 @@
                 onVisible(document.querySelector("#emailVerificationControl_but_change_claims"), 1, () => {
                     let verifyTextNode = document.querySelector("#emailVerificationControl_success_message");
                     let verifyText = verifyTextNode.innerHTML
-                    if ((verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) || !document.querySelector(".VerificationControl.emailVerificationControl_li")) {
-                        document.querySelectorAll('li.Password').forEach(function(node) { node.style.display = 'block' })
-                        document.querySelector('#continue').style.display = 'block';
+                    if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) {
+                        setVisible()
                     }
                 });
                 
+                if !document.querySelector(".VerificationControl.emailVerificationControl_li") {
+                    setVisible()
+                }
                 
             }, 2000)
         })
