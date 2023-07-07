@@ -1015,10 +1015,12 @@
           })
         }
         
-        function onVisible(element, ratio, callback) {
+        function onVisible(element, ratio, comparator, callback) {
+          
           new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
-              if (entry.intersectionRatio > 0) {
+              let comparison = (comparator == 'gt') ? entry.intersectionRatio > ratio : entry.intersectionRatio < ratio
+              if (comparison) {
                 callback(element);
                 //observer.disconnect();
               }
@@ -1039,7 +1041,7 @@
                 let verifyTextNode = document.getElementById("emailVerificationControl_success_message");
                 
                 if (document.getElementById("emailVerificationControl_but_change_claims")) {
-                    onVisible(document.getElementById("emailVerificationControl_but_change_claims"), 1, () => {
+                    onVisible(document.getElementById("emailVerificationControl_but_change_claims"), 0, 'gt', () => {
                         let verifyText = verifyTextNode.innerHTML;
                         if (verifyTextNode.style.display != 'none' && verifyText.includes('verified') && verifyText.includes('continue')) {
                             setVisible();
@@ -1053,6 +1055,18 @@
                             }
                             
                         }
+                    });
+                }
+                
+                if (document.getElementById("emailVerificationControl_but_send_code")) {
+                    onVisible(document.getElementById("emailVerificationControl_but_send_code"), 1, 'lt', () => {
+                        document.querySelector("#api .working").style.display = 'block';
+                    });
+                }
+                
+                if (document.getElementById("emailVerificationControl_but_verify_code")) {
+                    onVisible(document.getElementById("emailVerificationControl_but_send_code"), 1, 'lt', () => {
+                        document.querySelector("#api .working").style.display = 'block';
                     });
                 }
                 
