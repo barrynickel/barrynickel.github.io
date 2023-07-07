@@ -1034,6 +1034,15 @@
         }
         
         $(document).ready(function(){
+        
+            
+            var i = 0
+            let timerId = setInterval(() => {
+                console.log(document.getElementById("attributeVerification"))
+                console.log(i+=1);
+            }, 500);
+        
+        
             window.setTimeout(function() {
                 setupPwdTogglers();
                 
@@ -1084,8 +1093,9 @@
                     }
                 }
                 
+                clearInterval(timerId);
+                
             }, 2000)
-            console.log(document.querySelector(".VerificationControl.emailVerificationControl_li"))
         })
     </script>
 </head>
