@@ -1035,28 +1035,23 @@
         
         $(document).ready(function(){
         
-            
             var i = 0
             let timerId = setInterval(() => {
-                console.log(document.getElementById("attributeVerification"))
-                console.log(document.querySelector(".VerificationControl.emailVerificationControl_li"))
                 console.log(i+=1);
-                
                 if (document.getElementById("attributeVerification")) {
                     if (!document.querySelector(".VerificationControl.emailVerificationControl_li")) {
-                        console.log('element does not exist, showing password inputs and adjusting margin');
                         setVisible();
                         if (document.querySelector('li.Password.newPassword_li')) {
                             document.querySelector('li.Password.newPassword_li').style.marginTop = '3rem';
                         }
                     } else {
-                        console.log('element exists, adjusting margin');
                         if (document.querySelector('li.Password.newPassword_li')) {
                             document.querySelector('li.Password.newPassword_li').style.marginTop = '1rem';
                         }
                     }
                     clearInterval(timerId);
                 }
+                
             }, 250);
         
         
@@ -1096,15 +1091,12 @@
                     });
                 }
                 
-                console.log('checking if element does not exist');
                 if (!document.querySelector(".VerificationControl.emailVerificationControl_li")) {
-                    console.log('element does not exist, showing password inputs and adjusting margin');
                     setVisible();
                     if (document.querySelector('li.Password.newPassword_li')) {
                         document.querySelector('li.Password.newPassword_li').style.marginTop = '3rem';
                     }
                 } else {
-                    console.log('element exists, adjusting margin');
                     if (document.querySelector('li.Password.newPassword_li')) {
                         document.querySelector('li.Password.newPassword_li').style.marginTop = '1rem';
                     }
