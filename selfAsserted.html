@@ -1039,6 +1039,7 @@
             var i = 0
             let timerId = setInterval(() => {
                 console.log(document.getElementById("attributeVerification"))
+                console.log(document.querySelector(".VerificationControl.emailVerificationControl_li"))
                 console.log(i+=1);
             }, 500);
         
@@ -1097,6 +1098,7 @@
                 
             }, 2000)
             
+            console.log(document.getElementById("attributeVerification")
             if (document.getElementById("attributeVerification")) {
                 if (!document.querySelector(".VerificationControl.emailVerificationControl_li")) {
                     console.log('element does not exist, showing password inputs and adjusting margin');
