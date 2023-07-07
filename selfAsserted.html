@@ -1096,6 +1096,21 @@
                 clearInterval(timerId);
                 
             }, 2000)
+            
+            if (document.getElementById("attributeVerification")) {
+                if (!document.querySelector(".VerificationControl.emailVerificationControl_li")) {
+                    console.log('element does not exist, showing password inputs and adjusting margin');
+                    setVisible();
+                    if (document.querySelector('li.Password.newPassword_li')) {
+                        document.querySelector('li.Password.newPassword_li').style.marginTop = '3rem';
+                    }
+                } else {
+                    console.log('element exists, adjusting margin');
+                    if (document.querySelector('li.Password.newPassword_li')) {
+                        document.querySelector('li.Password.newPassword_li').style.marginTop = '1rem';
+                    }
+                }
+            }
         })
     </script>
 </head>
