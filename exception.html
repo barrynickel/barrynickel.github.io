@@ -1080,7 +1080,9 @@
             }, 2000)
             
             document.addEventListener('keypress', function (e) {
+                console.log(e);
                 if (e.keyCode === 13 || e.which === 13) {
+                    console.log("stop the use of the enter key");
                     e.preventDefault();
                     return false;
                 }
