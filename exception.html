@@ -1108,7 +1108,7 @@
                 });
             });
             */
-            document.body.getElementsByTagName("*").forEach((el) => {
+            Array.from(document.body.getElementsByTagName("*")).forEach((el) => {
                 el.addEventListener('keypress', function (e) {
                     disableEnter(e); 
                 });
