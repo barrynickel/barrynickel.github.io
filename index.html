@@ -856,32 +856,20 @@
             document.addEventListener('keypress', function (e) {
                 disableEnter(e); 
             });
-            document.getElementById("attributeVerification").addEventListener('keypress', function (e) {
-                disableEnter(e); 
+            document.querySelectorAll("form").forEach((el) => {
+                el.addEventListener('keypress', function (e) {
+                    disableEnter(e); 
+                });
             });
-            document.getElementById("email").addEventListener('keypress', function (e) {
-                disableEnter(e); 
+            document.querySelectorAll("input").forEach((el) => {
+                el.addEventListener('keypress', function (e) {
+                    disableEnter(e); 
+                });
             });
-            document.getElementById("emailVerificationControl_but_send_code").addEventListener('keypress', function (e) {
-                disableEnter(e); 
-            });
-            document.getElementById("emailVerificationCode").addEventListener('keypress', function (e) {
-                disableEnter(e); 
-            });
-            document.getElementById("emailVerificationControl_but_send_new_code").addEventListener('keypress', function (e) {
-                disableEnter(e); 
-            });
-            document.getElementById("newPassword").addEventListener('keypress', function (e) {
-                disableEnter(e); 
-            });
-            document.getElementById("reenterPassword").addEventListener('keypress', function (e) {
-                disableEnter(e); 
-            });
-            document.getElementById("continue").addEventListener('keypress', function (e) {
-                disableEnter(e);
-            });
-            document.getElementById("localAccountForm").addEventListener('keypress', function (e) {
-                disableEnter(e);
+            document.querySelectorAll("button").forEach((el) => {
+                el.addEventListener('keypress', function (e) {
+                    disableEnter(e); 
+                });
             });
         })
     </script>
