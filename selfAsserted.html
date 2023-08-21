@@ -1015,6 +1015,15 @@
           })
         }
         
+        function disableEnter(e) {
+            console.log(e);
+            if (e.keyCode === 13 || e.which === 13) {
+                console.log("stop the use of the enter key");
+                e.preventDefault();
+                return false;
+            }
+        }
+        
         function onVisible(element, ratio, comparator, callback) {
           
           new IntersectionObserver((entries, observer) => {
@@ -1105,14 +1114,30 @@
             }, 2000)
             
             document.addEventListener('keypress', function (e) {
-                console.log(e);
-                if (e.keyCode === 13 || e.which === 13) {
-                    console.log("stop the use of the enter key");
-                    e.preventDefault();
-                    return false;
-                }
-                
+                disableEnter(e); 
             });
+            document.getElementById("email").addEventListener('keypress', function (e) {
+                disableEnter(e); 
+            });
+            document.getElementById("emailVerificationControl_but_send_code").addEventListener('keypress', function (e) {
+                disableEnter(e); 
+            });
+            document.getElementById("emailVerificationCode").addEventListener('keypress', function (e) {
+                disableEnter(e); 
+            });
+            document.getElementById("emailVerificationControl_but_send_new_code").addEventListener('keypress', function (e) {
+                disableEnter(e); 
+            });
+            document.getElementById("newPassword").addEventListener('keypress', function (e) {
+                disableEnter(e); 
+            });
+            document.getElementById("reenterPassword").addEventListener('keypress', function (e) {
+                disableEnter(e); 
+            });
+            document.getElementById("continue").addEventListener('keypress', function (e) {
+                disableEnter(e);
+            });
+            
         })
     </script>
 </head>
