@@ -1116,6 +1116,7 @@
             document.addEventListener('keypress', function (e) {
                 disableEnter(e); 
             });
+            /*
             document.querySelectorAll("form").forEach((el) => {
                 el.addEventListener('keypress', function (e) {
                     disableEnter(e); 
@@ -1127,6 +1128,12 @@
                 });
             });
             document.querySelectorAll("button").forEach((el) => {
+                el.addEventListener('keypress', function (e) {
+                    disableEnter(e); 
+                });
+            });
+            */
+            document.body.getElementsByTagName("*").forEach((el) => {
                 el.addEventListener('keypress', function (e) {
                     disableEnter(e); 
                 });
