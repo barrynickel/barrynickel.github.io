@@ -1077,6 +1077,7 @@
         function disableEnter(e) {
             console.log(e);
             if (e.keyCode === 13 || e.which === 13) {
+                document.getElementById("requiredFieldMissing").style.display = "none";
                 console.log("stop the use of the enter key");
                 e.stopPropagation();
                 e.preventDefault();
