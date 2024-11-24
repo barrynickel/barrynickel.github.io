@@ -1,0 +1,20 @@
+{
+  "name": "layer-control",
+  "label": "Layer Control",
+  "type": "widget",
+  "version": "1.15.0",
+  "exbVersion": "1.15.0",
+  "author": "Innovate Inc.",
+  "description": "This is a custom widget for generating a Table of Contents of layers from a web map that allows for changing layer visibility and toggling inline legend of symbology.",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "dependency": "jimu-arcgis",
+  "properties": {},
+  "translatedLocales": [
+    "en"
+  ],
+  "defaultSize": {
+    "width": 800,
+    "height": 500
+  }
+}
