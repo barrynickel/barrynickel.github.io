@@ -1,0 +1,23 @@
+{
+  "created": 1739308853792,
+  "description": "",
+  "id": "1",
+  "modified": 1761495863598,
+  "owner": "bnickel",
+  "tags": [],
+  "thumbnail": null,
+  "title": "WUI Atlas",
+  "type": "Web Experience",
+  "snippet": "",
+  "typeKeywords": [
+    "EXB Experience",
+    "Ready To Use",
+    "JavaScript",
+    "status: Draft",
+    "version:1.15.0"
+  ],
+  "portalUrl": "https://ucsc.maps.arcgis.com",
+  "username": "bnickel",
+  "name": "WUI Atlas",
+  "isLocalApp": true
+}

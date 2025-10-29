@@ -1,0 +1,128 @@
+.layer-control-widget {
+    color: #050505 !important;
+}
+
+.layer-control-widget .layer-control-section {
+    border-top: 1px solid #dddddd;
+}
+
+.layer-control-section:first-child {
+    border-top: none;
+}
+
+.layer-control-widget .collapse-header.title2 {
+    background-color:#266496;
+    border: 1px solid #dddddd;
+    padding-right: 10px;
+}
+
+.layer-control-widget .collapse-header .collapse-label{
+    color:#FFFFFF;
+}
+
+.layer-control-widget .collapse-header .jimu-btn{
+    color:#FFFFFF;
+}
+
+#layer-control-pane .collapse-header .jimu-btn{
+    color:#000000;
+}
+
+#layer-control-pane .collapse-header.title2 {
+    background-color:#FFFFFF;
+    border: none;
+    flex-direction: row-reverse;
+}
+#layer-control-pane {
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+}
+
+#layer-control-pane .collapse-header .collapse-label{
+    color:rgb(5,5,5);
+}
+
+.layer-control-widget .jimu-radio.checked {
+    border-color: #000000 !important;
+}
+
+.layer-control-widget .jimu-radio input + span {
+    background: #000000 !important;
+}
+
+.layer-control-widget .collapsable-radio.no-map-display .jimu-radio.checked {
+    border-color: #cccccc !important;
+}
+
+.layer-control-widget .collapsable-radio.no-map-display .jimu-radio input + span {
+    background: #cccccc !important;
+}
+
+.layer-control-widget .collapsable-check span.jimu-checkbox.checked {
+    background: #000000 !important;
+}
+
+.layer-control-widget .collapsable-check span.jimu-checkbox {
+    border-color: #000000 !important;
+}
+
+.layer-control-widget .collapsable-check.no-map-display span.jimu-checkbox.checked {
+    background: #cccccc !important;
+}
+
+.layer-control-widget .collapsable-check.no-map-display span.jimu-checkbox {
+    border-color: #cccccc !important;
+}
+
+.layer-control-widget .legend-node-0 {
+    padding: 2px 0px 2px 0px;
+}
+
+.layer-control-widget .legend-node-6 {
+    padding: 2px 0px 2px 6px;
+}
+
+.layer-control-setting .jimu-dropdown button.dropdown-button {
+    height:32px;
+    padding: 4px 6px;
+    font-size: 14px;
+}
+
+.layer-control-setting .jimu-multi-select div.jimu-dropdown {
+    width:100%;
+}
+
+.layer-control-widget .esri-legend__service {
+    padding: 0px;
+}
+
+.layer-control-widget .esri-legend__layer, .layer-control-widget .esri-legend__layer-body {
+    margin-left: 0px;
+}
+.layer-control-widget .esri-legend__layer {
+    padding-right: 20px;
+    overflow: hidden;
+}
+
+.layer-control-widget .esri-legend__layer-table {
+    margin-bottom: 0px;
+}
+
+.layer-control-widget .continuous-color-legend-value {
+    position: relative;
+    padding-left: 7px;
+}
+
+.layer-control-widget .continuous-color-legend-value:before {
+    position: absolute;
+    top: 6px;
+    right: 100%;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3px 4px 3px 0;
+    border-color: rgba(0,0,0,0) rgba(50,50,50,.8) rgba(0,0,0,0) rgba(0,0,0,0);
+}
