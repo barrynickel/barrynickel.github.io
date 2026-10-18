@@ -208,7 +208,8 @@
               "right": true,
               "top": true,
               "bottom": false
-            }
+            },
+            "lockParent": false
           }
         }
       },
@@ -534,7 +535,7 @@
     "widget_4": {
       "uri": "widgets/layout/column/",
       "version": "1.15.0",
-      "label": "Column",
+      "label": "main-sidebar-column",
       "config": {
         "space": {
           "distance": 0,
@@ -1066,7 +1067,7 @@
     "widget_15": {
       "uri": "widgets/layout/column/",
       "version": "1.15.0",
-      "label": "Column 2",
+      "label": "second-sidebar-column",
       "config": {
         "space": {
           "distance": 0,
@@ -1340,8 +1341,8 @@
     "dataSource_10": {
       "id": "dataSource_10",
       "type": "WEB_MAP",
-      "sourceLabel": "WUI Atlas Layers v4",
-      "itemId": "66ce0a4ad05448a4bc82ff3495bd31e6",
+      "sourceLabel": "WUI Atlas Layers v5",
+      "itemId": "6208b413804147008572e34270026f5c",
       "portalUrl": "https://ucsc.maps.arcgis.com"
     }
   },
@@ -1410,7 +1411,7 @@
       "page_0": []
     }
   ],
-  "timestamp": 1769475059392,
+  "timestamp": 1792249186448,
   "customTheme": {
     "colors": {
       "dark": "#050505",
@@ -1419,5 +1420,5 @@
       "light": "#f0f0f0"
     }
   },
-  "publishTimestamp": 1769475068308
+  "publishTimestamp": 1792333843905
 }
